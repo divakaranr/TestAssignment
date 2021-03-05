@@ -1,0 +1,43 @@
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
+namespace AssignedSelnium_Task
+{
+public class TestClass
+{
+String driverPath = “”;
+String url=” http://www.htmlcanvasstudio.com/”;
+//Declaring driver object
+            WebDriver driver;
+
+[SetUp]
+Public void SetUpMethod(){
+            
+            
+            //Initializing driver object with chrome driver
+            driver = new ChromeDriver(driverPath);
+	//maximize window
+	driver.Manage().Window.Maximize();
+            //Go to the AUT url          
+            driver.Navigate().GoToUrl(url);
+
+
+}
+    [TestFixture]
+    
+        [Test]
+        public void TestMethod()
+        {
+            
+            Workspace canvasWorkspace= new Workspace();
+	canvasWorkspace.ToDrawHorizontalLine(10,15,20,15);
+	canvasWorkspace.ToDrawVerticalLine(10,10,10,20);
+	canvasWorkspace. ToDrawRectangle(5,25,15,30);
+	canvasWorkspace. Eraser((10,15,20,15);
+        }
+[TearDown]
+Public void TearDownMethod(){
+driver.close();
+}
+    }
+}
