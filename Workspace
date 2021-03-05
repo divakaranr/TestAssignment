@@ -1,0 +1,38 @@
+using OpenQA.Selenium;
+using System;
+using OpenQA.Selenium.Interactions;
+namespace AssignedSelnium_Task{
+Public class Workspace{
+
+WebDriver driver;
+
+//creating page elements
+webelemnt line = driver.findByElement(By.Xpath(“//input[contains(@class,'button line')]”));
+webelemnt eraser = driver.findByElement(By.Xpath(“//input[contains(@class,'button eraser')”));
+webelemnt rectangle = driver.findByElement(By.Xpath(“//input[contains(@class, button rectangle)]”));
+webelemnt drawBox = driver.findByElement(By.Xpath(“//canvas[contains(@id,'imageTemp')]”));
+Actions builder = new Actions(driver);
+
+//Method To Draw A Line
+Public void ToDrawLine(int x, int y, int a, int b){
+line.click();
+builder.clickAndHold(drawBox).moveByOffset(x,y).
+moveByOffset(a,b).release().perform();
+}
+
+//Method To Draw A Rectangle
+Public void ToDrawRectangle(int x, int y, int a, int b){
+rectangle.click();
+builder.clickAndHold(drawBox).moveByOffset(x,y).
+moveByOffset(a,b).release().perform();
+}
+
+//Method For Erasing
+Public void Eraser(int x, int y,int a,int b){
+eraser.click();
+ 
+builder.clickAndHold(drawBox).moveByOffset(x,y).
+moveByOffset(a,b).release().perform();
+}
+}
+}
