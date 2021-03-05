@@ -23,15 +23,14 @@ Public void SetUpMethod(){
 
 
 }
-    [TestFixture]
-    
+        
         [Test]
         public void TestMethod()
         {
             
             Workspace canvasWorkspace= new Workspace();
-	canvasWorkspace.ToDrawHorizontalLine(10,15,20,15);
-	canvasWorkspace.ToDrawVerticalLine(10,10,10,20);
+	canvasWorkspace.ToDrawLine(10,15,20,15);
+	canvasWorkspace.ToDrawLine(10,10,10,20);
 	canvasWorkspace. ToDrawRectangle(5,25,15,30);
 	canvasWorkspace. Eraser((10,15,20,15);
         }
